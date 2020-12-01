@@ -6,9 +6,9 @@ export default class Movie extends React.Component {
   };
 
   componentDidMount() {
-    fetch(
-      "https://srapi.herokuapp.com/v1/movies/222b4987-fa15-433d-9490-622172e813bc"
-    )
+    // this.props.match.params.id
+    const { params } = this.props.match;
+    fetch(`https://srapi.herokuapp.com/v1/movies/${this.params.id}`)
       .then((response) => {
         return response.json();
       })
